@@ -1,0 +1,17 @@
+.page-header Create Document - Select Sections
+= simple_nested_form_for(@document, :html => { :class =>"form-horizontal" }) do |f|
+  = f.error_notification
+  
+  .form-inputs
+    = f.input :name
+    = f.fields_for :sections do |s|
+      .form-inputs
+        = s.input :header
+        = s.input :body
+        = s.input :section_type, :as => :select, :collection => @section_types, :label_method => :first, :value_method => :last
+    = f.link_to_add "Add a Section", :sections
+    
+  %div.form-actions
+    = f.submit "Previous", :class => "btn btn-primary", :name => "step"
+    = f.submit "Next", :class => "btn btn-primary", :name => "step"
+

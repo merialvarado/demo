@@ -1,0 +1,16 @@
+.page-header Create Document - Position Sections
+= simple_nested_form_for(@document, :html => { :class =>"form-horizontal" }) do |f|
+  %ul#sortable
+    - for section in @sections
+      = content_tag_for :li, section do
+        %div.section
+          %div.section-header
+            %span.handle 
+              [drag]
+            = link_to section.header, section
+          %div.section-body
+            = section.body
+          
+  %div.form-actions
+    = f.submit "Previous", :class => "btn btn-primary", :name => "step"
+    = f.submit "Next", :class => "btn btn-primary", :name => "step"

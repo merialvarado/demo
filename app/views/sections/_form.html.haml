@@ -1,0 +1,11 @@
+= simple_nested_form_for(@section, :html => { :class =>"form-horizontal" }) do |f|
+  = f.error_notification
+  
+  .form-inputs
+    = f.input :header
+    = f.input :body
+    = f.input :section_type, :as => :select, :collection => @section_types, :label_method => :first, :value_method => :last 
+    
+  %div.form-actions
+    = f.submit :id => "form-button", :class => "btn btn-primary"
+    = link_to "Cancel", sections_path, :class => "btn"

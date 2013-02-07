@@ -1,0 +1,19 @@
+.page-header 
+  %h3 Section Details
+%table.table.table-bordered.table-striped
+  %colgroup
+    %col.span2
+    %col.span4
+  %tbody
+    %tr
+      %th Header
+      %td= @section.header
+    %tr
+      %th Body
+      %td= @section.body
+    %tr
+      %th Type
+      %td= @section.section_type
+%ul.nav.nav-pills
+  %li= link_to 'Back', sections_path, :class => "btn btn-small"
+  %li= link_to 'Edit', edit_section_path(@section), :class => "btn btn-small"

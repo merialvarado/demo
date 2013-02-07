@@ -1,0 +1,14 @@
+%ul#sortable
+  - for section in @sections
+    = content_tag_for :li, section do
+      %div.section
+        %div.section-header
+          %span.handle 
+            [drag]
+          = link_to section.header, section
+        %div.section-body
+          = section.body
+
+
+-#= sortable_element("sections", :url => sort_sections_path, :handle => "handle")
+
