@@ -1,0 +1,6 @@
+.page-header Create Document - Select Template
+= simple_nested_form_for(@document, :html => { :class =>"form-horizontal" }) do |f|
+          
+  %div.form-actions
+    = f.submit "Previous", :class => "btn btn-primary", :name => "step"
+    = f.submit "Submit", :class => "btn btn-primary", :name => "step"

@@ -1,0 +1,16 @@
+.page-header 
+  %h3 Document Details
+%table.table.table-bordered.table-striped
+  %colgroup
+    %col.span2
+    %col.span4
+  %tbody
+    %tr
+      %th Name
+      %td= @document.name
+    %tr
+      %th Attachment
+      %td=link_to @document.attachment_file_name, show_attachment_document_path(@document, :format => 'pdf', :inline => true),{:target => "_blank"}
+%ul.nav.nav-pills
+  %li= link_to 'Back', documents_path, :class => "btn btn-small"
+  %li= link_to 'Edit', edit_document_path(@document), :class => "btn btn-small"

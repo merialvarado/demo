@@ -6,6 +6,9 @@ Demo::Application.routes.draw do
     end
   end
   resources :documents do
+    member do
+      get 'show_attachment'
+    end
     collection do
       post 'sort'
     end

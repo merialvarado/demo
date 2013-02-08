@@ -14,6 +14,7 @@ gem 'mysql', '2.8.1'
 gem 'acts_as_list'
 gem "workflow"
 gem 'prawn'
+gem 'paperclip'
 
 # Gems used only for assets and not required
 # in production environments by default.

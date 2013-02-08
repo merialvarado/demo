@@ -1,5 +1,13 @@
 class DocumentsController < ApplicationController
 
+  def index
+    @documents = Document.all
+  end
+  
+  def show
+    @document = Document.find(params[:id])
+  end
+  
   def new
     @document = Document.new
     setup_edit_instance_variables
@@ -53,7 +61,8 @@ class DocumentsController < ApplicationController
           @document.next_step!
           format.html { redirect_to(edit_document_path(@document)) }
         elsif params[:step] == "Submit"
-          @document.submit!(current_user)
+          @document.submit!
+          @document.create_attachment
           format.html { redirect_to(@document, :notice => 'Successfully submitted transaction.') }
         end
       else
@@ -78,5 +87,13 @@ class DocumentsController < ApplicationController
     edit_setup_ok
   end
 
+  def show_attachment
+    @document = Document.find(params[:id])
+    if params[:inline] == true
+      send_file(@document.attachment.path, :type => @document.attachment.content_type, :disposition => 'inline')
+    else
+      send_file(@document.attachment.path, :type => @document.attachment.content_type, :disposition => 'attachment')
+    end
+  end
   
 end
