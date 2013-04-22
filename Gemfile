@@ -15,6 +15,10 @@ gem 'acts_as_list'
 gem "workflow"
 gem 'prawn'
 gem 'paperclip'
+#gem 'rjb', '1.4.3'
+#gem 'jasper-rails'
+gem 'bootstrap-wysihtml5-rails'
+gem "ckeditor"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,6 +33,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'activeadmin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

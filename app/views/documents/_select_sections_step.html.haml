@@ -4,10 +4,10 @@
   
   .form-inputs
     = f.input :name
-    = f.fields_for :sections do |s|
+    - f.fields_for :sections do |s|
       .form-inputs
         = s.input :header
-        = s.input :body
+        = s.input :body, :as => :ckeditor #, :input_html => { :ckeditor => {:toolbar => 'Full'} }
         = s.input :section_type, :as => :select, :collection => @section_types, :label_method => :first, :value_method => :last
     = f.link_to_add "Add a Section", :sections
     

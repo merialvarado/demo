@@ -10,6 +10,7 @@ class DocumentsController < ApplicationController
   
   def new
     @document = Document.new
+    @document.sections.build
     setup_edit_instance_variables
   end
   
