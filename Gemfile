@@ -19,6 +19,7 @@ gem 'paperclip'
 #gem 'jasper-rails'
 gem 'bootstrap-wysihtml5-rails'
 gem "ckeditor"
+gem 'ancestry', '1.3.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
